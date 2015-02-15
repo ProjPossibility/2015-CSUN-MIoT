@@ -95,7 +95,7 @@ public class HouseActivity extends Activity {
 
 
 
-            //get number of devices then put them into linear layouts of 2 horizontal
+        //get number of devices then put them into linear layouts of 2 horizontal
         //items a layout. that way they are split up evenly to the width of the screen
 
         ArrayList<LinearLayout> ll = new ArrayList<>();
@@ -116,7 +116,7 @@ public class HouseActivity extends Activity {
 
         myWebView.loadUrl("http://seyedsajjadi.com/devices/garage.html");
 
-       // myWebView.setWebViewClient(new WebViewClient());
+        // myWebView.setWebViewClient(new WebViewClient());
         b1 = (Button)findViewById(R.id.b1);
         b1.setText(l.get(0));
         b1.setHeight(height);
@@ -233,16 +233,12 @@ public class HouseActivity extends Activity {
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
             String content;
-
             String line = null;
-
             try{
                 URL url = new URL("http://seyedsajjadi.com");
-
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
-
                 InputStream input = urlConnection.getInputStream();
                 StringBuffer buffer = new StringBuffer();
                 if(input == null){
@@ -255,9 +251,7 @@ public class HouseActivity extends Activity {
                 if(buffer.length() == 0){
                     return null;
                 }
-
                 content = buffer.toString();
-
             } catch(IOException e){
                 return null;
             }
@@ -269,44 +263,37 @@ public class HouseActivity extends Activity {
                     try{
                         reader.close();
                     }catch(final IOException e){
-
                     }
                 }
             }
             try{
                 return content.split(" ");
             }catch (Exception e){
-
             }
             return content.split(" ");
         }
-
         @Override
         protected void onPostExecute(String[] arg){
             list.setAdapter(new ArrayAdapter<String>(HouseActivity.this,
                     R.layout.activity_house, arg));
         }
     }
-
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_house, menu);
         return true;
     }
-
     /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }*/
 }

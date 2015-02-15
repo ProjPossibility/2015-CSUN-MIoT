@@ -58,7 +58,7 @@ public class ForecastFragment extends Fragment {
                     @Override
                     public void onInit(int status) {
                         if(status != TextToSpeech.ERROR){
-                            ttobj.setLanguage(Locale.ENGLISH);
+                            ttobj.setLanguage(Locale.UK);
                         }
                     }
                 });
@@ -109,6 +109,9 @@ public class ForecastFragment extends Fragment {
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mAdaptor);
 
+
+
+
         View view = (ListView)getActivity().findViewById(list_item_forecast_textview);
        // String obj = view.toString();
         //Log.d("the test", obj);
@@ -128,7 +131,7 @@ public class ForecastFragment extends Fragment {
         String toSpeak = weekForecast.get(1);      // Toast.makeText(getApplicationContext(), toSpeak,
 
         //       Toast.LENGTH_SHORT).show();
-        ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+        ttobj.speak(toSpeak, TextToSpeech.QUEUE_ADD, null);
 
     }
 

@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:textAppearance="?android:attr/textAppearanceLarge" >
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000">
     </TextView>
 
     <TextView
@@ -22,7 +23,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="17dp"
-        android:text="@string/done_string" >
+        android:text="@string/done_string"
+        android:textColor="#000000">
     </TextView>
 
     <CheckBox
@@ -41,7 +43,8 @@
         android:layout_alignBaseline="@+id/statusCheckBox"
         android:layout_alignTop="@+id/StatusLabel"
         android:layout_toLeftOf="@+id/priorityView"
-        android:text="@string/priority_string" >
+        android:text="@string/priority_string"
+        android:textColor="#000000">
     </TextView>
 
     <TextView
@@ -50,7 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/statusCheckBox"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/StatusLabel" >
+        android:layout_alignTop="@+id/StatusLabel"
+        android:textColor="#000000">
     </TextView>
 
     <TextView
@@ -59,7 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statusCheckBox"
-        android:text="@string/date_string" >
+        android:text="@string/date_string"
+        android:textColor="#000000">
     </TextView>
 
     <TextView
@@ -67,7 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/DateLabel"
-        android:layout_toRightOf="@+id/DateLabel" >
+        android:layout_toRightOf="@+id/DateLabel"
+        android:textColor="#000000">
     </TextView>
 
 </RelativeLayout>

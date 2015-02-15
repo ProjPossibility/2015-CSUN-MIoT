@@ -20,11 +20,12 @@ import java.util.Locale;
 
 
 public class NewsActivity extends ActionBarActivity {
-
+        ForecastFragment obj = new ForecastFragment();
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
-        final ForecastFragment  obj = new ForecastFragment();
-        super.onCreate(savedInstanceState);
+
+       super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
         final Intent intent = new Intent(NewsActivity.this, ToDoManagerActivity.class);
         if (savedInstanceState == null) {
@@ -33,6 +34,7 @@ public class NewsActivity extends ActionBarActivity {
                     .commit();
 
         }
+
 
         final String qoute = "works";// view.toString();//"this works";// (String)view.getText();
 
@@ -43,10 +45,8 @@ public class NewsActivity extends ActionBarActivity {
             public void onClick(View v) {
                 // Perform action on click
                 // button.setText("pushed");
-                Intent intent = new Intent(NewsActivity.this, ToDoManagerActivity.class);
                 startActivity(intent);
                 //          speakText(qoute);
-
             }
         });
 

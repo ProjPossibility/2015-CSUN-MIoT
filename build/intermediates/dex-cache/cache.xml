@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Mehrzadshabez\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-53111ec3e591be8f228357e7c3c83b2d46039be5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\classes-e9f6b4791cb024f90c34f6e92d196efb5d5041e2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\classes-bf698edb5b54e93dbe8d68624b0aff6bac488c5c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\19.0.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7f6ef78b879e271f8645b2f2c2702390305f0fa2">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\classes-f9d83300ab923751c56493ffd1a60d24fb8a02dc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.11\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0f700f6802ba1a1f1fa7ac26d5db0666a89d75a6">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\classes-976879037ba48a7b714d9b4b71de9315b913e0c4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-f33c87b7c0bea36a5c3cc45402d0a21970b53bb4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\19.0.1\libs\internal_impl-19.0.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e1323875349a4e9b64fe8692f137f92b22dddcef">
+        <dex dex="C:\Users\Mehrzadshabez\Desktop\2015-CSUN-MIoT-master\app\build\intermediates\pre-dexed\debug\internal_impl-19.0.1-590d8466f413916051c2aefb2f0e509b31a77877.jar" />
+    </item>
+
+</items>
