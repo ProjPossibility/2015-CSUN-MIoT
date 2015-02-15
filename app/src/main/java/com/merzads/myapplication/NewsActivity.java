@@ -43,8 +43,10 @@ public class NewsActivity extends ActionBarActivity {
             public void onClick(View v) {
                 // Perform action on click
                 // button.setText("pushed");
+                Intent intent = new Intent(NewsActivity.this, ToDoManagerActivity.class);
                 startActivity(intent);
                 //          speakText(qoute);
+
             }
         });
 

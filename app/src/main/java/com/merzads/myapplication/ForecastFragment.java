@@ -58,7 +58,7 @@ public class ForecastFragment extends Fragment {
                     @Override
                     public void onInit(int status) {
                         if(status != TextToSpeech.ERROR){
-                            ttobj.setLanguage(Locale.UK);
+                            ttobj.setLanguage(Locale.ENGLISH);
                         }
                     }
                 });

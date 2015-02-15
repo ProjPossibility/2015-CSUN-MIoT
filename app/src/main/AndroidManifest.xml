@@ -40,6 +40,10 @@
             android:name=".BlueActivity"
             android:label="@string/title_activity_blue" >
         </activity>
+        <activity android:name=".AddToDoActivity" >
+        </activity>
+        <activity android:name=".ToDoManagerActivity" >
+        </activity>
     </application>
 
 </manifest>
