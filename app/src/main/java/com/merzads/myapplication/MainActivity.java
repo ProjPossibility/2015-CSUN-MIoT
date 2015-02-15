@@ -72,6 +72,7 @@ public class MainActivity extends Activity {
             public boolean onLongClick(View v) {
                 Intent in = new Intent(MainActivity.this, HouseActivity.class);
                 startActivity(in);
+                tts.speak("House Devices Selected", TextToSpeech.QUEUE_FLUSH, null);
                 return true;
             }
         });
@@ -88,6 +89,7 @@ public class MainActivity extends Activity {
             public boolean onLongClick(View v) {
                 Intent in = new Intent(MainActivity.this, NewsActivity.class);
                 startActivity(in);
+                tts.speak("News Selected", TextToSpeech.QUEUE_FLUSH, null);
                 return true;
             }
         });
@@ -104,6 +106,7 @@ public class MainActivity extends Activity {
             public boolean onLongClick(View v) {
                 Intent in = new Intent(MainActivity.this, NoiseActivity.class);
                 startActivity(in);
+                tts.speak("Noise Selected", TextToSpeech.QUEUE_FLUSH, null);
                 return true;
             }
         });
@@ -118,8 +121,9 @@ public class MainActivity extends Activity {
         blue.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Intent in = new Intent(MainActivity.this, NewsActivity.class);
+                Intent in = new Intent(MainActivity.this, BlueActivity.class);
                 startActivity(in);
+                tts.speak("Blue tooth selected", TextToSpeech.QUEUE_FLUSH, null);
                 return true;
             }
         });
@@ -170,8 +174,10 @@ public class MainActivity extends Activity {
                 SharedPreferences.Editor editor2 = sharedPref.edit();
                 editor2.putBoolean(getString(R.string.new_user), false);
                 editor2.putString(getString(R.string.type), "blind");
-                String welcome = "Welcome to MIoT, touch either corner of the screen to hear the command";
-                tts.speak(welcome, TextToSpeech.QUEUE_FLUSH, null);
+                String welcome = "Welcome to My Oat, touch any corner of the screen to hear the command";
+                String welcome2 = "When you want to select a command, click and hold that corner of the screen until you hear the command name";
+                tts.speak(welcome, TextToSpeech.QUEUE_ADD, null);
+                tts.speak(welcome2, TextToSpeech.QUEUE_ADD, null);
             }
         },6000);
         type = "blind";

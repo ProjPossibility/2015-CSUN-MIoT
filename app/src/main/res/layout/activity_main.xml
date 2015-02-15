@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_gravity="center"
         android:background="@color/red"
-        android:text="Morning News"
+        android:text="News"
         android:textColor="@color/white"
         android:textSize="48dp"
     />
