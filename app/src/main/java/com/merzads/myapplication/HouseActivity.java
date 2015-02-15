@@ -1,6 +1,7 @@
 package com.merzads.myapplication;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.speech.tts.TextToSpeech;
 import android.util.DisplayMetrics;
@@ -43,6 +44,8 @@ public class HouseActivity extends Activity {
     ListView list;
     ArrayList<Button> b;
     String s;
+    Button b1, b2, b3, b4;
+    boolean loadingDone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,40 +64,34 @@ public class HouseActivity extends Activity {
         l.add("Alarm");
         l.add("Washer");
         l.add("Lights");
-        l.add("sprinklers");
+        l.add("Sprinklers");
 
         u = new ArrayList<>();
         u.add("http://seyedsajjadi.com/devices/garage.html");
         u.add("http://seyedsajjadi.com/devices/alarm.html");
         u.add("http://seyedsajjadi.com/devices/washer.html");
         u.add("http://seyedsajjadi.com/devices/lights.html");
-        u.add("http://seyedsajjadi.com/devices/sprinklers.html");
+        u.add("http://seyedsajjadi.com/devices/lights.html");
+        w = new ArrayList<>();
 
         list = new ListView(this);
-        final WebView myWebView = new WebView(this);
+        final WebView myWebView = (WebView)findViewById(R.id.webview);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         myWebView.loadUrl("http://seyedsajjadi.com/devices/garage.html");
-        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url){
+                loadingDone = true;
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap facIcon){
+                loadingDone = false;
+            }
+        });
+        myWebView.setVisibility(View.GONE);
         Log.v("the name ", myWebView.getTitle());
-
-        for(int i=0; i < l.size(); i++){
-            b.add(new Button(this));
-            b.get(i).setText(l.get(i));
-            myWebView.loadUrl(u.get(i));
-            myWebView.setWebViewClient(new WebViewClient());
-            w.add(myWebView.getTitle());
-        }
-
-
-
-        /*DownloadFilesTask d = new DownloadFilesTask();
-        d.execute("http://seyedsajjadi.com/");
-        String temp;//= list.getAdapter().toString();
-        Toast.makeText(this,temp, Toast.LENGTH_LONG);
-        //for(int i = 0; i < )*/
-
-        sv = (ScrollView)findViewById(R.id.scrollView);
 
 
 
@@ -117,55 +114,117 @@ public class HouseActivity extends Activity {
         int width = dm.widthPixels / 2;
         int height = dm.heightPixels / 2;
 
-        //creating linearlayouts for every 2 items so that they split the screen in half
-        for(int i=0; i < l.size(); i++){
-            if((i+1) % 2 != 0){
-                LinearLayout templl = new LinearLayout(this);
-                templl.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
-                templl.setOrientation(LinearLayout.HORIZONTAL);
-                templl.setWeightSum(.5f);
-                s = w.get(i);
-                final Button tempb = b.get(i);
-                tempb.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        tts.speak(tempb.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                });
-                tempb.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        tts.speak(tempb.getText().toString() + s, TextToSpeech.QUEUE_FLUSH, null);
-                        return true;
-                    }
-                });
-                tempb.setTextSize(48.0f);
-                templl.addView(tempb);
-                ll.add(templl);
+        myWebView.loadUrl("http://seyedsajjadi.com/devices/garage.html");
 
+       // myWebView.setWebViewClient(new WebViewClient());
+        b1 = (Button)findViewById(R.id.b1);
+        b1.setText(l.get(0));
+        b1.setHeight(height);
+        b1.setWidth(width);
+        b1.setBackgroundColor(getResources().getColor(R.color.red));
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tts.speak(b1.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+                myWebView.loadUrl(u.get(0));
             }
-            else{
-                s = w.get(i);
-                final Button tempb = b.get(i);
-                tempb.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        tts.speak(tempb.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                });
-                tempb.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        tts.speak(tempb.getText().toString() + s, TextToSpeech.QUEUE_FLUSH, null);
-                        return true;
-                    }
-                });
-                tempb.setTextSize(48.0f);
-                ll.get(ll.size()-1).addView(tempb);
-                ll2.addView(ll.get(ll.size()-1));
+        });
+        b1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                myWebView.loadUrl(u.get(0));
+                while(!loadingDone){Toast.makeText(HouseActivity.this, "Loading", Toast.LENGTH_SHORT).show();};
+                tts.speak(b1.getText().toString() + " " + myWebView.getTitle(), TextToSpeech.QUEUE_FLUSH, null);
+
+                return true;
             }
-        }
-        sv.addView(ll2);
+        });
+        b1.setTextSize(48.0f);
+        b1.setTextColor(getResources().getColor(R.color.white));
+
+        myWebView.loadUrl(u.get(1));
+        b2 = (Button)findViewById(R.id.b2);
+
+        b2.setText(l.get(1));
+        b2.setHeight(height);
+        b2.setWidth(width);
+        b2.setBackgroundColor(getResources().getColor(R.color.red));
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myWebView.loadUrl(u.get(1));
+                tts.speak(b2.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+        b2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                myWebView.loadUrl(u.get(1));
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                tts.speak(b2.getText().toString() + myWebView.getTitle(), TextToSpeech.QUEUE_FLUSH, null);
+                return true;
+            }
+        });
+        b2.setTextSize(48.0f);
+        b2.setTextColor(getResources().getColor(R.color.white));
+
+        myWebView.loadUrl(u.get(2));
+        b3 = (Button)findViewById(R.id.b3);
+        b3.setText(l.get(2));
+        b3.setHeight(height);
+        b3.setWidth(width);
+        b3.setBackgroundColor(getResources().getColor(R.color.red));
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myWebView.loadUrl(u.get(2));
+                tts.speak(b3.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+        b3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                myWebView.loadUrl(u.get(2));
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                tts.speak(b3.getText().toString() + myWebView.getTitle(), TextToSpeech.QUEUE_FLUSH, null);
+                return true;
+            }
+        });
+        b3.setTextSize(48.0f);
+        b3.setTextColor(getResources().getColor(R.color.white));
+
+        myWebView.loadUrl(u.get(3));
+        b4 = (Button)findViewById(R.id.b4);
+        b4.setText(l.get(3));
+        b4.setHeight(height);
+        b4.setWidth(width);
+        b4.setBackgroundColor(getResources().getColor(R.color.red));
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myWebView.loadUrl(u.get(3));
+                tts.speak(b4.getText().toString(), TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+        b4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                myWebView.loadUrl(u.get(3));
+
+                tts.speak(b4.getText().toString() + myWebView.getTitle(), TextToSpeech.QUEUE_FLUSH, null);
+                return true;
+            }
+        });
+        b4.setTextSize(48.0f);
+        b4.setTextColor(getResources().getColor(R.color.white));
     }
 
     /*public class DownloadFilesTask extends AsyncTask<String, Void, String[]> {
