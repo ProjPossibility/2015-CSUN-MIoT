@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">My Application</string>
+    <string name="app_name">MIoT</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_house">HouseActivity</string>
+    <string name="new_user"></string>
+    <string name="check_impair">Are you deaf or blind?</string>
+    <string name="deaf">Deaf</string>
+    <string name="blind">Blind</string>
+    <string name="type"></string>
+    <string name="type_user">Type of User</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_noise">NoiseActivity</string>
+    <string name="title_activity_blue">BlueActivity</string>
 
 </resources>
